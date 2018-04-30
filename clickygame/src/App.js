@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Header from "./components/Jumbotron";
+import Jumbotron from "./components/Jumbotron";
 
 const App = () => (
   <div>

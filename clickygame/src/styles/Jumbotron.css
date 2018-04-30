@@ -1,0 +1,12 @@
+.jumbotron {
+    text-align: center;
+    background-image: url("./images/light-grey-terrazzo.png");
+}
+
+h1 {
+    font-size: 72px;
+}
+
+p {
+    font-size: 24px;
+}
