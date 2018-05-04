@@ -1,12 +1,31 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url("/images/Nue-Gothic.ttf");
+}
+
 .jumbotron {
     text-align: center;
-    background-image: url("./images/light-grey-terrazzo.png");
+    background-image: url("./images/zigzag2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 h1 {
     font-size: 72px;
+    font-family: myFirstFont;
+    font-weight: bold;
+    color: 	#4F2823;
+    text-shadow:
+    -1px -1px 0 #6DC379,
+    1px -1px 0 #6DC379,
+    -1px 1px 0 #6DC379,
+    1px 1px 0 #6DC379;
 }
 
 p {
     font-size: 24px;
+    color: 	#D20D07;
+    text-shadow: 0px 15px 5px rgba(0,0,0,0.1),
+    10px 20px 5px rgba(0,0,0,0.05),
+    -10px 20px 5px rgba(0,0,0,0.05);
 }
