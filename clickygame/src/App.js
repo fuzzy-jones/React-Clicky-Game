@@ -20,6 +20,7 @@ class App extends Component {
         <Wrapper>
           {this.state.characters.map(character => (
             <Characters 
+              key={character.id}
               id={character.id}
               name={character.name}
               image={character.image}
