@@ -20,11 +20,24 @@ class App extends Component {
   state = {
     characters,
     score: 0,
-    topScore: 0
+    topScore: 0,
+    clickedCharacters: []
   };
 
   clickedImage = id => {
+    // assign the state of the empty array to a let to be updated
+    let clickedCharacters = this.state.clickedCharacters;
+
+    // if the clicked image has an id of the indexed characters
+    if (clickedCharacters.indexOf(id) === -1) {
+      // push that id into that id into the array to be stored
+      clickedCharacters.push(id);
+      console.log(clickedCharacters);
+    }
+
+    // run the score function
     this.handleIncrement();
+    // run the reshuffle function after each click
     this.makeShuffle();
   }
 
