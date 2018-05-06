@@ -5,17 +5,59 @@ import Characters from "./components/CharacterCard";
 import Wrapper from "./components/Wrapper";
 import characters from "./characters.json";
 
+// Fisher–Yates Shuffle
+function shuffle(array) {
+  var copy = [], n = array.length, i;
+
+  // While there remain elements to shuffle…
+  while (n) {
+
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * array.length);
+
+    // If not already shuffled, move it to the new array.
+    if (i in array) {
+      copy.push(array[i]);
+      delete array[i];
+      n--;
+    }
+  }
+
+  return copy;
+}
+
 
 class App extends Component {
 
   state = {
-    characters
+    characters,
+    score: 0,
+    topScore: 0
   };
+
+  clickedImage = id => {
+
+  }
+
+  // handleIncrement increases this.state.score by 1
+  handleIncrement = () => {
+    // We always use the setState method to update a component's state
+    this.setState({ score: this.state.score + 1 });
+  };
+
+  // shuffle up images
+  makeShuffle = () => {
+    this.setState({ characters: shuffle(characters) })
+  }
+  
 
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar
+          score={this.state.score}
+          topScore={this.state.topScore}
+        />
         <Jumbotron />
         <Wrapper>
           {this.state.characters.map(character => (
