@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "../styles/Jumbotron.css";
+import "../styles/Header.css";
 
-class Jumbotron extends Component {
+class Header extends Component {
     render() {
         return (
-            <div className="jumbotron">
+            <div className="header">
                 <h1>Twin Peaks Clicky Game</h1>
                 <p>Click on an image to earn points, but don't click on any more than once!</p>
             </div>
@@ -12,4 +12,4 @@ class Jumbotron extends Component {
     }
 }
 
-export default Jumbotron;
+export default Header;

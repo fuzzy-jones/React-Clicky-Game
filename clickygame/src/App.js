@@ -1,29 +1,17 @@
 import React, { Component }  from "react";
 import Navbar from "./components/Navbar";
-import Jumbotron from "./components/Jumbotron";
+import Header from "./components/Header";
 import Characters from "./components/CharacterCard";
 import Wrapper from "./components/Wrapper";
 import characters from "./characters.json";
 
-// Fisher–Yates Shuffle
+// shuffle function from stackoverflow
 function shuffle(array) {
-  let copy = [], n = array.length, i;
-
-  // While there remain elements to shuffle…
-  while (n) {
-
-    // Pick a remaining element…
-    i = Math.floor(Math.random() * array.length);
-
-    // If not already shuffled, move it to the new array.
-    if (i in array) {
-      copy.push(array[i]);
-      delete array[i];
-      n--;
-    }
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
   }
-
-  return copy;
+  return array;
 }
 
 
@@ -36,12 +24,13 @@ class App extends Component {
   };
 
   clickedImage = id => {
-    this.handleIncrement()
+    this.handleIncrement();
+    this.makeShuffle();
   }
 
   // handleIncrement increases this.state.score by 1
   handleIncrement = () => {
-    // We always use the setState method to update a component's state
+    // setState updates a components states
     this.setState({ score: this.state.score + 1 });
   };
 
@@ -58,7 +47,7 @@ class App extends Component {
           score={this.state.score}
           topScore={this.state.topScore}
         />
-        <Jumbotron />
+        <Header />
         <Wrapper>
           {this.state.characters.map(character => (
             <Characters 

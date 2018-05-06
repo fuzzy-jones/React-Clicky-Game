@@ -3,14 +3,16 @@
     src: url("/images/Nue-Gothic.ttf");
 }
 
-.jumbotron {
+.header {
+    height: 175px;
     text-align: center;
     background-image: url("./images/zigzag2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.jumbotron h1 {
+.header h1 {
+    padding-top: 15px;
     font-size: 72px;
     font-family: myFirstFont;
     font-weight: bold;
@@ -22,7 +24,7 @@
     1px 1px 0 #6DC379;
 }
 
-.jumbotron p {
+.header p {
     font-size: 26px;
     color: 	#4F2823;
     text-shadow:
