@@ -7,7 +7,7 @@ import characters from "./characters.json";
 
 // Fisher–Yates Shuffle
 function shuffle(array) {
-  var copy = [], n = array.length, i;
+  let copy = [], n = array.length, i;
 
   // While there remain elements to shuffle…
   while (n) {
@@ -36,7 +36,7 @@ class App extends Component {
   };
 
   clickedImage = id => {
-
+    this.handleIncrement()
   }
 
   // handleIncrement increases this.state.score by 1
@@ -66,6 +66,7 @@ class App extends Component {
               id={character.id}
               name={character.name}
               image={character.image}
+              clickedImage={this.clickedImage}
             />
           ))}
         </Wrapper>
