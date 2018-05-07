@@ -56,7 +56,7 @@ class App extends Component {
 
     if (score > topScore) {
       this.setState({
-        topScore: score,
+        topScore: score
       })
     } 
   }
