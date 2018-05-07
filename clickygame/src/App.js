@@ -37,6 +37,12 @@ class App extends Component {
       this.handleIncrement();
       // run the reshuffle function after each click
       this.makeShuffle();
+    } else if (this.state.score === 12) {
+      alert("You win, you clicked each character with out clicking doubles")
+      this.setState({
+        score: 0,
+        clickedCharacters: []
+      });
     } else {
       this.setState({
         score: 0,
