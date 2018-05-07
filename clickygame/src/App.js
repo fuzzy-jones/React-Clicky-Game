@@ -27,6 +27,8 @@ class App extends Component {
   clickedImage = id => {
     // assign the state of the empty array to a let to be updated
     let clickedCharacters = this.state.clickedCharacters;
+    let score = this.state.score;
+    let topScore = this.state.topScore;
 
     // if the clicked image has an id of the indexed characters
     if (clickedCharacters.indexOf(id) === -1) {
@@ -51,6 +53,12 @@ class App extends Component {
       console.log("duplicate")
       alert("Sorry you clicked the same person twice, start over")
     }
+
+    if (score > topScore) {
+      this.setState({
+        topScore: score,
+      })
+    } 
   }
 
   // handleIncrement increases this.state.score by 1
