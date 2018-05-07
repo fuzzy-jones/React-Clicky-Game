@@ -33,12 +33,18 @@ class App extends Component {
       // push that id into that id into the array to be stored
       clickedCharacters.push(id);
       console.log(clickedCharacters);
+      // run the score function
+      this.handleIncrement();
+      // run the reshuffle function after each click
+      this.makeShuffle();
+    } else {
+      this.setState({
+        score: 0,
+        clickedCharacters: []
+      });
+      console.log("duplicate")
+      alert("Sorry you clicked the same person twice, start over")
     }
-
-    // run the score function
-    this.handleIncrement();
-    // run the reshuffle function after each click
-    this.makeShuffle();
   }
 
   // handleIncrement increases this.state.score by 1
@@ -51,6 +57,10 @@ class App extends Component {
   makeShuffle = () => {
     this.setState({ characters: shuffle(characters) })
   }
+
+  // reset = () => {
+  //   this.setState({ score: 0 })
+  // }
   
 
   render() {
